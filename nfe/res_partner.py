@@ -97,7 +97,7 @@ class ResPartner(orm.Model):
                 self.write(cr, uid, [partner.id], result, context)
         return
     
-    # Verifica se est· habilitado no SEFAZ sem escrever os dados do cliente 
+    # Verifica se est· habilitado no SEFAZ sem escrever o registro dos dados do cliente 
     def sefaz_check_enable(self, cr, uid, ids, context=False):
 
         if context.get('company_id', False):
@@ -140,11 +140,5 @@ class ResPartner(orm.Model):
                                         info.get('xMotivo', '')))
                 if info['cSit'] not in ('1',):
                     raise orm.except_orm(
-                        _("Situa√ß√£o Cadastral Vigente:"),
-                        _("N√ÉO HABILITADO"))                
-
-                result = {                    
-                    'habilitado_sintegra': info['cSit'],
-                }
-                #self.write(cr, uid, [partner.id], result, context)
-        return result
+                        _("SituaÁ„o Cadastral Vigente:"),
+                        _("N√O HABILITADO"))
