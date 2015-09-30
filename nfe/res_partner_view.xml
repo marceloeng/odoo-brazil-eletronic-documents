@@ -9,7 +9,12 @@
             <field name="arch" type="xml">
                 <xpath expr="//div[@name='buttons']" position="inside">
                 	<button name="sefaz_check" type="object" class="oe_inline oe_stat_button" 
-                		icon="fa-search" string="Consultar SEFAZ">
+                		icon="fa-search" string="Consulta SEFAZ">
+                	</button>                	
+                </xpath>
+				<xpath expr="//div[@name='buttons']" position="inside">
+                	<button name="sefaz_check_enable" type="object" class="oe_inline oe_stat_button" 
+                		icon="fa-search" string="Habilitado SEFAZ">
                 	</button>                	
                 </xpath>
                 <field name="partner_fiscal_type_id" position="after">
