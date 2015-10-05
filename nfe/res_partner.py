@@ -70,7 +70,7 @@ class ResPartner(orm.Model):
         return info
     #Verifica se está habilitado no SEFAZ escrevendo o registro dos dados do cliente 
     def sefaz_check(self, cr, uid, ids, context=False):
-        info = self.execute_sefaz_check(cr, uid, ids, context=False)
+        info = self.execute_sefaz_check(cr, uid, ids, context)
         if info['cStat'] not in ('111', '112'):
             raise orm.except_orm(
                 _("Erro ao se comunicar com o SEFAZ"),
@@ -103,7 +103,7 @@ class ResPartner(orm.Model):
     
     #Verifica se está habilitado no SEFAZ sem escrever o registro dos dados do cliente 
     def sefaz_check_enable(self, cr, uid, ids, context=False):
-        info = self.execute_sefaz_check(cr, uid, ids, context=False)
+        info = self.execute_sefaz_check(cr, uid, ids, context)
         if info['cStat'] not in ('111', '112'):
             raise orm.except_orm(
                 _("Erro ao se comunicar com o SEFAZ"),
